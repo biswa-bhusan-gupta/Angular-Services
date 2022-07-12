@@ -2,6 +2,7 @@
 
 import { Component } from "@angular/core";
 import { ServerService } from ".././server.service";
+import { DataService } from ".././data.service";
 
 @Component({
   selector: "app-server",
@@ -18,9 +19,13 @@ import { ServerService } from ".././server.service";
 })
 export class ServerComponent {
   public employees = [];
-  constructor(private _employeeService: ServerService) {}
+  constructor(
+    private _employeeService: ServerService,
+    private _data: DataService
+  ) {}
 
   ngOnInit() {
     this.employees = this._employeeService.getEmployees();
+    this._data.setData("Biswa");
   }
 }
