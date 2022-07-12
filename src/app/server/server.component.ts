@@ -15,7 +15,8 @@ import { DataService } from ".././data.service";
     </div>
   `,
 
-  styleUrls: ["./server.component.css"]
+  styleUrls: ["./server.component.css"],
+  providers: [DataService]
 })
 export class ServerComponent {
   public employees = [];
